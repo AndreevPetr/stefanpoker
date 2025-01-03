@@ -22,7 +22,7 @@
             display: inline;
             margin-right: 10px;
         }
-        button.lang-button {
+        button.lang-button, button.music-button {
             background: none;
             border: 1px solid red;
             color: red;
@@ -44,15 +44,6 @@
             padding: 10px 0;
             background: #111;
             color: red;
-        }
-        .music-button {
-            background: none;
-            border: 1px solid red;
-            color: red;
-            font-size: 16px;
-            cursor: pointer;
-            padding: 5px 10px;
-            margin-top: 20px;
         }
     </style>
 </head>
@@ -89,7 +80,7 @@
         <br><br>
         <button class="music-button" onclick="toggleMusic()">Toggle Music</button>
         <audio id="backgroundMusic" loop>
-            <source src="/background.mp3" type="audio/mpeg">
+            <source src="background.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
     </main>
@@ -199,46 +190,7 @@
             }
         };
 
-        function changeLanguage(lang) {
-            const data = textContent[lang];
-            if (!data) {
-                console.error(`Language data for '${lang}' not found.`);
-                return;
-            }
-
-            document.getElementById('mainTitle').textContent = data.mainTitle;
-            document.getElementById('mainDescription').textContent = data.mainDescription;
-            document.getElementById('coursesTitle').textContent = data.coursesTitle;
-
-            const coursesList = document.getElementById('coursesList');
-            coursesList.innerHTML = ''; // Clear current list
-            data.coursesList.forEach(course => {
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                a.href = "https://www.signumclub.com/?promo=MONK";
-                a.textContent = course;
-                li.appendChild(a);
-                coursesList.appendChild(li);
-            });
-
-            document.getElementById('giftTitle').textContent = data.giftTitle;
-            document.getElementById('giftDescription').textContent = data.giftDescription;
-            document.getElementById('giftLink').textContent = data.giftLink;
-            document.getElementById('giftLink').href = "https://www.signumclub.com/gifts?promo=MONK";
-        }
-
-        function toggleMusic() {
-            const music = document.getElementById('backgroundMusic');
-            if (music.paused) {
-                music.play().catch(error => {
-                    console.error("Error playing music:", error);
-                });
-            } else {
-                music.pause();
-            }
-        }
-
-        // Optional: Remember the selected language using localStorage
+        // Инициализация страницы с сохраненным языком или английским по умолчанию
         document.addEventListener('DOMContentLoaded', function () {
             const savedLang = localStorage.getItem('preferredLanguage') || 'en';
             changeLanguage(savedLang);
@@ -256,7 +208,7 @@
             document.getElementById('coursesTitle').textContent = data.coursesTitle;
 
             const coursesList = document.getElementById('coursesList');
-            coursesList.innerHTML = ''; // Clear current list
+            coursesList.innerHTML = ''; // Очистка текущего списка
             data.coursesList.forEach(course => {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
@@ -268,11 +220,23 @@
 
             document.getElementById('giftTitle').textContent = data.giftTitle;
             document.getElementById('giftDescription').textContent = data.giftDescription;
-            document.getElementById('giftLink').textContent = data.giftLink;
-            document.getElementById('giftLink').href = "https://www.signumclub.com/gifts?promo=MONK";
+            const giftLink = document.getElementById('giftLink');
+            giftLink.textContent = data.giftLink;
+            giftLink.href = "https://www.signumclub.com/gifts?promo=MONK";
 
-            // Save the selected language
+            // Сохранение выбранного языка
             localStorage.setItem('preferredLanguage', lang);
+        }
+
+        function toggleMusic() {
+            const music = document.getElementById('backgroundMusic');
+            if (music.paused) {
+                music.play().catch(error => {
+                    console.error("Error playing music:", error);
+                });
+            } else {
+                music.pause();
+            }
         }
     </script>
 </body>
