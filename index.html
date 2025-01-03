@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signum Club - Learn Poker from Stefan "stefan11222" Burakov</title>
+    <meta name="description" content="Join the Signum Club to master poker with high-stakes legend Stefan 'stefan11222' Burakov. Subscribe to our online courses and start playing like a professional today.">
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: black;
+            color: red;
+            margin: 0;
+            padding: 0;
+        }
+        header nav ul {
+            list-style: none;
+            text-align: center;
+            padding: 20px 0;
+            margin: 0;
+        }
+        header nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        button.lang-button {
+            background: none;
+            border: 1px solid red;
+            color: red;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 5px 10px;
+            margin: 0 5px;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        a {
+            color: red;
+            text-decoration: none;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #111;
+            color: red;
+        }
+        .music-button {
+            background: none;
+            border: 1px solid red;
+            color: red;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><button class="lang-button" onclick="changeLanguage('en')">English</button></li>
+                <li><button class="lang-button" onclick="changeLanguage('ru')">Русский</button></li>
+                <li><button class="lang-button" onclick="changeLanguage('kk')">Қазақша</button></li>
+                <li><button class="lang-button" onclick="changeLanguage('sr')">Српски</button></li>
+                <li><button class="lang-button" onclick="changeLanguage('ng')">Nigerian</button></li>
+                <li><button class="lang-button" onclick="changeLanguage('uk')">Українська</button></li>
+                <li><button class="lang-button" onclick="changeLanguage('zh')">中文 (简体)</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 id="mainTitle">Welcome to Signum Club</h1>
+        <p id="mainDescription">Learn poker from high-stakes legend Stefan "stefan11222" Burakov. Join our courses and start playing like a professional.</p>
+        
+        <h2 id="coursesTitle">Our Courses</h2>
+        <ul id="coursesList">
+            <li><a href="https://www.signumclub.com/?promo=MONK">Subscribe to Monthly Poker Courses</a></li>
+            <li><a href="https://www.signumclub.com/?promo=MONK">Buy Online Poker Course</a></li>
+            <li><a href="https://www.signumclub.com/?promo=MONK">Register for a Master Class with Stefan "stefan11222"</a></li>
+            <li><a href="https://www.signumclub.com/?promo=MONK">Premium Subscription for Advanced Lessons</a></li>
+        </ul>
+        
+        <h2 id="giftTitle">Gift Ideas for Poker Players</h2>
+        <p id="giftDescription">Looking for the perfect gift for a poker enthusiast? Check out our exclusive poker accessories and gift cards.</p>
+        <a href="https://www.signumclub.com/gifts?promo=MONK" id="giftLink">Gifts for Gamers and Poker Lovers</a>
+        
+        <br><br>
+        <button class="music-button" onclick="toggleMusic()">Toggle Music</button>
+        <audio id="backgroundMusic" loop>
+            <source src="/background.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </main>
+    <footer>
+        <p>© 2025 Signum Club. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const textContent = {
+            en: {
+                mainTitle: "Welcome to Signum Club",
+                mainDescription: "Learn poker from high-stakes legend Stefan 'stefan11222' Burakov. Join our courses and start playing like a professional.",
+                coursesTitle: "Our Courses",
+                coursesList: [
+                    "Subscribe to Monthly Poker Courses",
+                    "Buy Online Poker Course",
+                    "Register for a Master Class with Stefan 'stefan11222'",
+                    "Premium Subscription for Advanced Lessons"
+                ],
+                giftTitle: "Gift Ideas for Poker Players",
+                giftDescription: "Looking for the perfect gift for a poker enthusiast? Check out our exclusive poker accessories and gift cards.",
+                giftLink: "Gifts for Gamers and Poker Lovers"
+            },
+            ru: {
+                mainTitle: "Добро пожаловать в Signum Club",
+                mainDescription: "Изучите покер у легенды высоких ставок Стефана 'stefan11222' Буракова. Присоединяйтесь к нашим курсам и начните играть как профессионал.",
+                coursesTitle: "Наши курсы",
+                coursesList: [
+                    "Подписка на месячные курсы по покеру",
+                    "Купить онлайн-курс по покеру",
+                    "Записаться на мастер-класс со Стефаном 'stefan11222'",
+                    "Премиум подписка на продвинутые уроки"
+                ],
+                giftTitle: "Идеи подарков для покеристов",
+                giftDescription: "Ищете идеальный подарок для любителя покера? Ознакомьтесь с нашими эксклюзивными аксессуарами для покера и подарочными картами.",
+                giftLink: "Подарки для геймеров и любителей покера"
+            },
+            kk: {
+                mainTitle: "Signum Club қош келдіңіз",
+                mainDescription: "Жоғары деңгейлі покер ойынын үйреніңіз. Біздің курстарымызға қосылыңыз және кәсіби ойыншы сияқты ойнауды бастаңыз.",
+                coursesTitle: "Біздің курстар",
+                coursesList: [
+                    "Ай сайынғы покер курстарына жазылу",
+                    "Онлайн покер курсын сатып алу",
+                    "Стефан 'stefan11222' Бураковпен шебер класқа тіркелу",
+                    "Кеңейтілген сабақтар үшін премиум жазылу"
+                ],
+                giftTitle: "Покер ойыншыларына арналған сыйлық идеялары",
+                giftDescription: "Покер сүйер қауымға тамаша сыйлық іздеп жүрсіз бе? Біздің эксклюзивті покер аксессуарларымыз бен сыйлық карталарымызды тексеріңіз.",
+                giftLink: "Геймерлер мен покер сүйер қауымға арналған сыйлықтар"
+            },
+            sr: {
+                mainTitle: "Dobrodošli u Signum Club",
+                mainDescription: "Naučite poker od Stefana 'stefan11222' Burakova, legendu visokih uloga. Pridružite se našim kursevima i počnite igrati kao profesionalac.",
+                coursesTitle: "Naši kursevi",
+                coursesList: [
+                    "Pretplatite se na mesečne kurseve pokera",
+                    "Kupite online kurs pokera",
+                    "Registrujte se za majstorsku klasu sa Stefanom 'stefan11222'",
+                    "Premium pretplata za napredne lekcije"
+                ],
+                giftTitle: "Ideje za poklone za poker igrače",
+                giftDescription: "Tražite savršen poklon za ljubitelja pokera? Pogledajte naše ekskluzivne poker dodatke i poklon kartice.",
+                giftLink: "Pokloni za gamere i ljubitelje pokera"
+            },
+            ng: {
+                mainTitle: "Welcome to Signum Club",
+                mainDescription: "Learn high-stakes poker from Stefan 'stefan11222' Burakov. Enroll now and enhance your playing skills.",
+                coursesTitle: "Our Courses",
+                coursesList: [
+                    "Monthly Subscription for Poker Training",
+                    "Purchase Online Poker Course",
+                    "Enroll in a Master Class with Stefan 'stefan11222'",
+                    "Get Premium Access for Advanced Training"
+                ],
+                giftTitle: "Gift Ideas for Gamers",
+                giftDescription: "Searching for the ideal gift for a gamer? Explore our range of exclusive poker gear and gift cards.",
+                giftLink: "Check Out Gifts for Poker Enthusiasts"
+            },
+            uk: {
+                mainTitle: "Ласкаво просимо до Signum Club",
+                mainDescription: "Вивчайте покер від легенди великих ставок Стефана 'stefan11222' Буракова. Приєднуйтесь до наших курсів та почніть грати як професіонал.",
+                coursesTitle: "Наші курси",
+                coursesList: [
+                    "Підписка на місячні курси з покеру",
+                    "Купіть онлайн-курс з покеру",
+                    "Зареєструйтесь на майстер-клас зі Стефаном 'stefan11222'",
+                    "Преміум-підписка на продвинуті уроки"
+                ],
+                giftTitle: "Ідеї подарунків для гравців у покер",
+                giftDescription: "Шукаєте ідеальний подарунок для ентузіаста покеру? Перегляньте наші ексклюзивні аксесуари для покеру та подарункові картки.",
+                giftLink: "Подарунки для геймерів та любителів покеру"
+            },
+            zh: {
+                mainTitle: "欢迎来到 Signum Club",
+                mainDescription: "从高额赌注传奇 Stefan 'stefan11222' Burakov 学习扑克。加入我们的课程，开始像专业人士一样玩扑克。",
+                coursesTitle: "我们的课程",
+                coursesList: [
+                    "订阅每月扑克课程",
+                    "购买在线扑克课程",
+                    "注册 Stefan 'stefan11222' 的大师班",
+                    "高级课程的高级订阅"
+                ],
+                giftTitle: "扑克玩家的礼物想法",
+                giftDescription: "寻找完美的扑克爱好者礼物？查看我们的独家扑克配件和礼品卡。",
+                giftLink: "为游戏玩家和扑克爱好者的礼物"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const data = textContent[lang];
+            if (!data) {
+                console.error(`Language data for '${lang}' not found.`);
+                return;
+            }
+
+            document.getElementById('mainTitle').textContent = data.mainTitle;
+            document.getElementById('mainDescription').textContent = data.mainDescription;
+            document.getElementById('coursesTitle').textContent = data.coursesTitle;
+
+            const coursesList = document.getElementById('coursesList');
+            coursesList.innerHTML = ''; // Clear current list
+            data.coursesList.forEach(course => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = "https://www.signumclub.com/?promo=MONK";
+                a.textContent = course;
+                li.appendChild(a);
+                coursesList.appendChild(li);
+            });
+
+            document.getElementById('giftTitle').textContent = data.giftTitle;
+            document.getElementById('giftDescription').textContent = data.giftDescription;
+            document.getElementById('giftLink').textContent = data.giftLink;
+            document.getElementById('giftLink').href = "https://www.signumclub.com/gifts?promo=MONK";
+        }
+
+        function toggleMusic() {
+            const music = document.getElementById('backgroundMusic');
+            if (music.paused) {
+                music.play().catch(error => {
+                    console.error("Error playing music:", error);
+                });
+            } else {
+                music.pause();
+            }
+        }
+
+        // Optional: Remember the selected language using localStorage
+        document.addEventListener('DOMContentLoaded', function () {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+        });
+
+        function changeLanguage(lang) {
+            const data = textContent[lang];
+            if (!data) {
+                console.error(`Language data for '${lang}' not found.`);
+                return;
+            }
+
+            document.getElementById('mainTitle').textContent = data.mainTitle;
+            document.getElementById('mainDescription').textContent = data.mainDescription;
+            document.getElementById('coursesTitle').textContent = data.coursesTitle;
+
+            const coursesList = document.getElementById('coursesList');
+            coursesList.innerHTML = ''; // Clear current list
+            data.coursesList.forEach(course => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = "https://www.signumclub.com/?promo=MONK";
+                a.textContent = course;
+                li.appendChild(a);
+                coursesList.appendChild(li);
+            });
+
+            document.getElementById('giftTitle').textContent = data.giftTitle;
+            document.getElementById('giftDescription').textContent = data.giftDescription;
+            document.getElementById('giftLink').textContent = data.giftLink;
+            document.getElementById('giftLink').href = "https://www.signumclub.com/gifts?promo=MONK";
+
+            // Save the selected language
+            localStorage.setItem('preferredLanguage', lang);
+        }
+    </script>
+</body>
+</html>
